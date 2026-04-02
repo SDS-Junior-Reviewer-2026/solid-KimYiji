@@ -12,10 +12,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class WeatherTrackerTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    private final NotifierFactory notifierFactory = new NotifierFactory(); // 변경
 
     @Test
     public void testReturnsCurrentWeather() {
-        WeatherTracker tracker = new WeatherTracker();
+        WeatherTracker tracker = new WeatherTracker(notifierFactory); // 파라미터 형태 변경됨.
         tracker.setCurrentConditions("rainy");
 
         assertEquals("rainy", tracker.currentConditions);
@@ -23,7 +24,7 @@ public class WeatherTrackerTest {
 
     @Test
     public void testAlertsPhoneUsersWhenRaining() {
-        WeatherTracker tracker = new WeatherTracker();
+        WeatherTracker tracker = new WeatherTracker(notifierFactory);
         System.setOut(new PrintStream(outContent));
         tracker.setCurrentConditions("rainy");
 
@@ -32,7 +33,7 @@ public class WeatherTrackerTest {
 
     @Test
     public void testAlertsViaEmailWhenSunny() {
-        WeatherTracker tracker = new WeatherTracker();
+        WeatherTracker tracker = new WeatherTracker(notifierFactory);
         System.setOut(new PrintStream(outContent));
         tracker.setCurrentConditions("sunny");
 
