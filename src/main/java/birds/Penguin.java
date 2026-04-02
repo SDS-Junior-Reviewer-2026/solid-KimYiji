@@ -1,6 +1,6 @@
 package birds;
 
-public class Penguin implements SwimableBird, Bird {
+public class Penguin implements SwimableBird { // 방법 2, 방법 1은 Bird도 다중 상속
     String currentLocation;
     int numberOfFeathers;
 

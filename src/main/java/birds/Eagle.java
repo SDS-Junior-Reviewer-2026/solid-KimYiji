@@ -1,6 +1,6 @@
 package birds;
 
-public class Eagle implements FlyableBird, Bird {
+public class Eagle implements FlyableBird { // 방법 2, 방법 1은 Bird도 다중 상속
     String currentLocation;
     int numberOfFeathers;
 
