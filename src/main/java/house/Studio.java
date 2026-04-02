@@ -9,7 +9,7 @@ public class Studio extends Apartment {
         this.squareFootage = sqft;
     }
 
-    //방법 1
-    public void upgradeBedroomNumber(){
-    }
+//    //방법 1
+//    public void upgradeBedroomNumber(){
+//    }
 }
