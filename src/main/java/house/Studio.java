@@ -8,4 +8,8 @@ public class Studio extends Apartment {
     public void setSquareFootage(int sqft) {
         this.squareFootage = sqft;
     }
+
+    //방법 1
+    public void upgradeBedroomNumber(){
+    }
 }
